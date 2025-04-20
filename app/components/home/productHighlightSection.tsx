@@ -10,7 +10,7 @@ function ProductHighlightSection() {
             <Image src="/images/globe.png" alt="Globe" fill />
           </div>
           <div className="content">
-            <h5 className="gilroy_bold">Worldwide Inventory Hub</h5>
+            <h6 className="gilroy_bold">Worldwide Inventory Hub</h6>
             <small className="">
               Get instant access to a wide range of flights, hotels, tours, and activities-sourced from trusted travel providers around the world. Everything you need, all in one place
             </small>
@@ -21,7 +21,7 @@ function ProductHighlightSection() {
             <Image src="/images/api.png" alt="API" fill />
           </div>
           <div className="content">
-            <h5 className="gilroy_bold">Effortless API Integration</h5>
+            <h6 className="gilroy_bold">Effortless API Integration</h6>
             <small className="">
               Our APIs are simple to connect, developer-friendly, and built for fast deployment-so you can launch your travel services quickly and start earning without delay.
             </small>
@@ -32,7 +32,7 @@ function ProductHighlightSection() {
             <Image src="/images/certificate.png" alt="Certificate" fill />
           </div>
           <div className="content">
-            <h5 className="gilroy_bold">No Accreditation? No Problem.</h5>
+            <h6 className="gilroy_bold">No Accreditation? No Problem.</h6>
             <small className="">
               You don’t need IATA or other certifications to get started. We manage all supplier partnerships so you can focus on selling and growing your business with ease.
             </small>

@@ -12,13 +12,13 @@ function Header() {
           <Menu />
         </div>
         <div className="block-end">
-          <Link href={'/register'} className="button button--accent" data-icon="start">
+          <Link href={'/register'} className="button button--register" data-icon="start">
             <span className="icon"><i className="fa-solid fa-user-tie"></i></span>
             <span>Register Now</span>
           </Link>
           <button className="button button--whatsapp" data-icon="start">
             <span className="icon"><i className="fa-brands fa-whatsapp"></i></span>
-            <span>Let's Talk</span>
+            <span>Let&#39;s Talk</span>
           </button>
         </div>
       </div>

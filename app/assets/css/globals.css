@@ -7,10 +7,27 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+    pointer-events: initial;
+    overflow: hidden;
+  }
+  &::-webkit-scrollbar {
+    width: var(--scrollbar-width);
+    height: var(--scrollbar-width);
+    background: transparent;
+    pointer-events: initial;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    pointer-events: initial;
+    border-radius: 10px;
+  }
 }
 
 html {
   color-scheme: dark;
+  scroll-behavior: smooth;
 }
 html,
 body {
@@ -86,7 +103,6 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.4rem;
   }
   &[data-icon="start"] { --button-padding-x-start: 0; }
   &[data-icon="end"] { --button-padding-x-end: 0;  }
@@ -125,7 +141,7 @@ a {
       --outline-text-color: var(--whatsapp-hover-color);
     }
   }
-  &:is(.button--accent) {
+  &:is(.button--register) {
     --button-height: 52px;
     --button-bg: hsla(var(--accent-hsl), 0.15);
     --button-color: var(--accent);
@@ -138,4 +154,27 @@ a {
       color: var(--outline-text-color);
     }
   }
+  &:is(.button--accent) {
+    --button-height: 52px;
+    --button-bg: hsla(var(--accent-hsl), 1);
+    --button-color: var(--light);
+    --button-hover-bg: var(--light);
+    --button-hover-color: var(--accent);
+    &:is(:active, .button:focus-visible, .button:focus) {
+      --outline-bg: var(--accent);
+      --outline-color: var(--accent);
+      --outline-text-color: var(--light);
+      color: var(--outline-text-color);
+    }
+    &:is(:active, .button:focus-visible, .button:focus):hover {
+      --outline-text-color: var(--accent);
+      color: var(--outline-text-color);
+    }
+  }
+}
+
+prism-editor {
+  display: grid;
+  height: 30em;
+  overflow: hidden;
 }

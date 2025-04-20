@@ -1,4 +1,5 @@
 :root {
+  --scrollbar-width: 5px;
   --header-height: 5.25rem;
   --header-height-gaps: 2rem;
   --wrapper-width: 90rem;

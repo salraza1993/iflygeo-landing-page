@@ -1,20 +1,15 @@
 'use client'
-
 import Image from "next/image";
 import { useState } from "react";
 
-function AirlineLogosSection({ }) {
+function SuppliersSection() {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [logosStrip1, setLogosStrip1] = useState([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+  const [logosStrip1, setLogosStrip1] = useState([19, 18, 17, 16, 15, 14, 13, 12, 11,]);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [logosStrip2, setLogosStrip2] = useState([11, 12, 13, 14, 15, 16, 17, 18, 19]);
+  const [logosStrip2, setLogosStrip2] = useState([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
   return (
     <section className="airline-logo-section">
-      <span className="strip-start"></span>
-      <div className="content-wrapper">
-        <div className="content-header">
-          <h3 className="gilroy">Trusted by hundreds of <strong className="text-accent">Airlines</strong> in <strong className="text-accent">80+</strong> countries</h3>
-        </div>
+      <div className="content-wrapper">        
         <div className="logo-carousel-wrapper">
           <div className="infinite-scroll-wrapper">
             <ul className="list" style={{ '--quantity': `${logosStrip1.length}`, '--animeTime': '60s' } as React.CSSProperties}>
@@ -44,4 +39,4 @@ function AirlineLogosSection({ }) {
   )
 }
 
-export default AirlineLogosSection
+export default SuppliersSection

@@ -23,7 +23,9 @@
   --whatsapp-hover-bg: #2AEA00;
   --whatsapp-hover-color: #0e3a04;
 
-  --button-bg: #262661;
+  --common-button-bg: #262661;
+
+  --button-bg: var(--common-button-bg);
   --button-color: var(--body-color);
   --button-border-color: hsla(var(--light-hsl), 0.1);
   --button-hover-bg: var(--accent);
