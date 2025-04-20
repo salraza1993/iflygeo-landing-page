@@ -1,0 +1,12 @@
+:root {
+  --transition: all 0.3s ease-in-out;
+  --outline-width: 0.15rem;
+  --outline-style: solid;
+  --outline-color: hsla(var(--light-hsl), 0.5);
+  --outline-bg: hsla(var(--light-hsl), 0.35);
+  --outline-text-color: inherit;
+  --outline-offset: 0.2rem;
+  --outline-radius: var(--border-radius);
+  --font-weight: 400; 
+  --body-font-family: var(--inter), var(--roboto), Arial, Helvetica, sans-serif;
+}

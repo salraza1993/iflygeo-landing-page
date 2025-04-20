@@ -1,0 +1,32 @@
+:root {
+  --body-bg-hsl: 240, 75%, 9%;
+  --body-color-hsl: 240, 18%, 86%;
+  --accent-hsl: 24, 100%, 50%;
+  --primary-hsl: 242, 82%, 38%;
+  --primary-100-hsl: 240, 44%, 26%;
+  --header-bg-hsl: 240, 44%, 26%;
+  --light-hsl: 0, 0%, 100%;
+  --dark-hsl: 240, 9%, 30%;
+
+  --body-bg: hsla(var(--body-bg-hsl), 1);
+  --body-color: hsla(var(--body-color-hsl), 1);
+  --accent: hsl(var(--accent-hsl), 1);
+  --primary: hsl(var(--primary-hsl), 1);
+  --primary-100: hsla(var(--primary-100-hsl), 1);
+  --header-bg: hsla(var(--header-bg-hsl), 1);
+  --light: hsla(var(--light-hsl), 1);
+  --dark: hsla(var(--dark-hsl), 1);
+
+  --whatsapp-bg-hsl: 109, 100%, 46%;
+  --whatsapp-bg: #2AEA00;
+  --whatsapp-color: #2AEA00;
+  --whatsapp-hover-bg: #2AEA00;
+  --whatsapp-hover-color: #0e3a04;
+
+  --button-bg: #262661;
+  --button-color: var(--body-color);
+  --button-border-color: hsla(var(--light-hsl), 0.1);
+  --button-hover-bg: var(--accent);
+  --button-hover-color: var(--light);
+  --button-hover-border-color: hsla(var(--light-hsl), 1);
+}

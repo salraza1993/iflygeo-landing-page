@@ -1,0 +1,15 @@
+:root {
+  --header-height: 5.25rem;
+  --header-height-gaps: 2rem;
+  --wrapper-width: 90rem;
+  --border-radius: 0.5rem;
+  --body-top-padding: calc(var(--header-height) + var(--header-height-gaps));
+  --button-height: 50px;
+  --button-padding-x-start: 1.15rem;
+  --button-padding-x-end: 1.15rem;
+  --button-gap: 0.35rem;
+  --button-border-width: 0;
+  --button-border-style: solid;
+  --button-font-size: 1rem;
+  --button-font-weight: 600;
+}

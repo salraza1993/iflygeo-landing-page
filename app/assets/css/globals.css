@@ -1,0 +1,141 @@
+@import './variables/variables.css';
+@import './elements/classes.css';
+@import './utils.css';
+@import "@fortawesome/fontawesome-free/css/all.css";
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  color-scheme: dark;
+}
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--body-bg);
+  color: var(--body-color);
+  font-family: var(--inter), var(--roboto), Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding-block-start: var(--body-top-padding);
+  scrollbar-gutter: auto;
+
+  &::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    opacity: 0.15;
+    background: transparent url(/images/noise-pattern.png) repeat;
+    background-attachment: fixed;
+    background-blend-mode: luminosity;
+    z-index: -1;
+  }
+}
+
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* @layer pages {
+  @import './pages/home.css';
+  @import './pages/about.css';
+  @import './pages/career.css';
+  @import './pages/contact.css';
+  @import './pages/signup.css';
+} */
+
+*:focus-visible {
+  background-color: var(--outline-bg);
+  color: var(--outline-text-color);
+  border-color: var(--outline-border-color);
+  outline-width: var(--outline-width);
+  outline-style: var(--outline-style);
+  outline-color: var(--outline-color);
+  outline-offset: var(--outline-offset);
+  border-radius: var(--outline-radius);
+}
+
+
+.button {
+  border-radius: var(--border-radius);
+  background-color: var(--button-bg);
+  color: var(--button-color);
+  height: var(--button-height);
+  border: var(--button-border-width) var(--button-border-style) var(--button-border-color);
+  font-weight: var(--button-font-weight);
+  font-size: var(--button-font-size);
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  padding-inline-start: var(--button-padding-x-start);
+  padding-inline-end: var(--button-padding-x-end);
+  .icon {
+    width: var(--button-height);
+    height: var(--button-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+  }
+  &[data-icon="start"] { --button-padding-x-start: 0; }
+  &[data-icon="end"] { --button-padding-x-end: 0;  }
+  &[data-icon="both-sides"] { 
+    --button-padding-x-start: 0;
+    --button-padding-x-end: 0;
+    gap: var(--button-gap);
+  }
+
+  &:hover {
+    background-color: var(--button-hover-bg);
+    color: var(--button-hover-color);
+    outline-color: var(--button-hover-border-color);
+    &:focus-visible, &:focus {
+      --outline-bg: var(--button-hover-bg);
+      --outline-color: var(--button-hover-color);
+      --outline-text-color: var(--button-hover-border-color);
+    }
+  }
+  &:is(:active, &:focus-visible, &:focus):not(:disabled, :hover) {
+    --outline-bg: #3f3f80;
+    --outline-color: var(--button-hover-border-color);
+    --outline-text-color: var(--button-hover-color);
+    background-color: var(--outline-bg);
+  }
+
+  &:is(.button--whatsapp) {
+    --button-height: 52px;
+    --button-bg: hsla(var(--whatsapp-bg-hsl), 0.15);
+    --button-color: var(--whatsapp-color);
+    --button-hover-bg: var(--whatsapp-hover-bg);
+    --button-hover-color: var(--whatsapp-hover-color);
+    &:is(:active, .button:focus-visible, .button:focus) {
+      --outline-bg: var(--whatsapp-hover-color);
+      --outline-color: var(--whatsapp-color);
+      --outline-text-color: var(--whatsapp-hover-color);
+    }
+  }
+  &:is(.button--accent) {
+    --button-height: 52px;
+    --button-bg: hsla(var(--accent-hsl), 0.15);
+    --button-color: var(--accent);
+    --button-hover-bg: var(--accent);
+    --button-hover-color: var(--light);
+    &:is(:active, .button:focus-visible, .button:focus) {
+      --outline-bg: var(--accent);
+      --outline-color: var(--accent);
+      --outline-text-color: var(--light);
+      color: var(--outline-text-color);
+    }
+  }
+}
