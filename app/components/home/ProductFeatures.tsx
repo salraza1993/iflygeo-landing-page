@@ -60,6 +60,7 @@ function ProductFeatures() {
           </div>
         </div>
       </div>
+      <small className="much-more">and much more...</small>
     </section>
   )
 }

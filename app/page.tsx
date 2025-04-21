@@ -6,6 +6,7 @@ import ProductSection from "./components/home/ProductSection";
 import SuppliersSection from "./components/home/SuppliersSection";
 import AchievementsSections from "./components/home/AchievementsSections";
 import ProductFeatures from "./components/home/ProductFeatures";
+import FooterCTASection from "./components/home/FooterCTASection";
 
 export default function HomePage() {
   return (
@@ -17,30 +18,7 @@ export default function HomePage() {
       <SuppliersSection />
       <AchievementsSections />
       <ProductFeatures />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
+      <FooterCTASection />
     </main>
   );
 }

@@ -3,6 +3,12 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React, { useEffect, useState, useCallback } from 'react';
 
+type MenuListType = {
+  label: string,
+  path: string,
+  isActive: boolean,
+}
+
 function Menu() {
   const pathname = usePathname();
   const menuWidth = 110;
@@ -10,10 +16,16 @@ function Menu() {
   const [activeMenu, setActiveMenu] = useState(pathname);
   const [activeStripMarginX, setActiveStripMarginX] = useState(0);
   const [activeStripOpacity, setActiveStripOpacity] = useState(1);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [menuList, setMenuList] = useState<MenuListType[]>([
+    { label: 'Company', path: '/company', isActive: false },
+    { label: 'Career', path: '/career', isActive: false },
+    { label: 'contact', path: '/contact', isActive: false }
+  ]);
 
   const updateStripPosition = useCallback(() => {
     switch (pathname) {
-      case '/about':
+      case '/company':
         setActiveStripMarginX(0);
         setActiveStripOpacity(1);
         break;
@@ -46,21 +58,13 @@ function Menu() {
         } as React.CSSProperties
       }
     >
-      <li className={pathname === '/about' ? 'menu-item active' : 'menu-item'}>
-        <Link href="/about" className="menu-link">
-          Company
-        </Link>
-      </li>
-      <li className={pathname === '/career' ? 'menu-item active' : 'menu-item'}>
-        <Link href="/career" className="menu-link">
-          Career
-        </Link>
-      </li>
-      <li className={pathname === '/contact' ? 'menu-item active' : 'menu-item'}>
-        <Link href="/contact" className="menu-link">
-          Contact
-        </Link>
-      </li>
+      {
+        menuList.map((menu: MenuListType, index: number) => {
+          return <li key={index} className={pathname === menu.path ? 'menu-item active' : 'menu-item'}>
+            <Link href={menu.path} className="menu-link">{menu.label}</Link>
+          </li>
+        })
+      }
       <li
         className="active-strip"
         style={{

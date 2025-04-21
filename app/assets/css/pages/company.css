@@ -1,0 +1,120 @@
+.company-page {
+  position: relative;
+}
+
+.hero-section {
+  --content-max-width: calc(55rem + 5vw);
+  position: relative;
+  width: 100%;
+  isolation: isolate;
+  margin-block-start: calc(0rem - var(--body-top-padding));
+  padding-block-start: calc(var(--body-top-padding) + 0.75rem);
+  padding-inline: 2vw;
+  padding-block-end: calc(3rem + 2vw);
+
+  .hero-content-wrapper {
+    --heading-font-size: clamp(2rem, 5vw, 4rem);
+    --block-padding-y: calc(1.5rem + 1.5vw);
+    --block-padding-x: calc(1.5rem + 1.5vw);
+    position: relative;
+    margin-inline: auto;
+    z-index: 1;
+    max-width: var(--content-max-width);
+    margin-inline: auto;
+    padding: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .animated-border-box,
+    .animated-border-box-glow {
+      position: absolute;
+      overflow: hidden;
+      z-index: 0;
+      inset: 0;
+    }
+
+    .animated-border-box-glow {
+      overflow: hidden;
+      filter: blur(10px);
+      opacity: 0.5;
+    }
+
+    .animated-border-box:before,
+    .animated-border-box-glow:before {
+      content: '';
+      z-index: -2;
+      text-align: center;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(0deg);
+      position: absolute;
+      width: 99999px;
+      height: 99999px;
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      background-image: conic-gradient(transparent, var(--accent), transparent 25%);
+      animation: rotate 10s linear infinite;
+    }
+
+    .animated-border-box:after {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      left: 1px;
+      top: 1px;
+      width: calc(100% - 2px);
+      height: calc(100% - 2px);
+    }
+
+    .hero-content {
+      display: flex;
+      justify-content: center;
+      padding-block: var(--block-padding-y);
+      padding-inline: var(--block-padding-x);
+      position: relative;
+      background-color: hsl(240, 54%, 21%);
+      isolation: isolate;
+
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        opacity: 0.15;
+        background: transparent url(/images/wave2.gif) no-repeat;
+        background-blend-mode: luminosity;
+        z-index: -1;
+      }
+
+      .heading {
+        /* font-size: var(--heading-font-size); */
+        text-transform: uppercase;
+        text-align: center;
+        text-wrap: pretty;
+      }
+    }
+  }
+
+  .down-arrow {
+    position: absolute;
+    inset-block-start: calc(100% - 10px);
+    inset-inline-start: calc(50% - 25px);
+    width: 50px;
+    animation: jump 3s infinite;
+
+    img {
+      position: relative !important;
+      object-fit: contain;
+    }
+  }
+
+  .sub-content {
+    position: relative;
+    width: 100%;
+    max-width: var(--content-max-width);
+    margin-inline: auto;
+    margin-block-start: calc(4rem + 2vw);
+    text-align: center;
+    text-wrap: balance;
+  }
+}

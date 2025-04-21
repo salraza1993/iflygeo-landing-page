@@ -1,6 +1,7 @@
 @import './variables/variables.css';
 @import './elements/classes.css';
 @import './utils.css';
+@import './shared.css';
 @import "@fortawesome/fontawesome-free/css/all.css";
 
 * {
@@ -28,6 +29,7 @@
 html {
   color-scheme: dark;
   scroll-behavior: smooth;
+  scroll-padding-top: var(--body-top-padding);
 }
 html,
 body {
@@ -62,14 +64,6 @@ a {
   text-decoration: none;
 }
 
-/* @layer pages {
-  @import './pages/home.css';
-  @import './pages/about.css';
-  @import './pages/career.css';
-  @import './pages/contact.css';
-  @import './pages/signup.css';
-} */
-
 *:focus-visible {
   background-color: var(--outline-bg);
   color: var(--outline-text-color);
@@ -82,99 +76,3 @@ a {
 }
 
 
-.button {
-  border-radius: var(--border-radius);
-  background-color: var(--button-bg);
-  color: var(--button-color);
-  height: var(--button-height);
-  border: var(--button-border-width) var(--button-border-style) var(--button-border-color);
-  font-weight: var(--button-font-weight);
-  font-size: var(--button-font-size);
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  transition: all 0.3s ease-in-out;
-  cursor: pointer;
-  padding-inline-start: var(--button-padding-x-start);
-  padding-inline-end: var(--button-padding-x-end);
-  .icon {
-    width: var(--button-height);
-    height: var(--button-height);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  &[data-icon="start"] { --button-padding-x-start: 0; }
-  &[data-icon="end"] { --button-padding-x-end: 0;  }
-  &[data-icon="both-sides"] { 
-    --button-padding-x-start: 0;
-    --button-padding-x-end: 0;
-    gap: var(--button-gap);
-  }
-
-  &:hover {
-    background-color: var(--button-hover-bg);
-    color: var(--button-hover-color);
-    outline-color: var(--button-hover-border-color);
-    &:focus-visible, &:focus {
-      --outline-bg: var(--button-hover-bg);
-      --outline-color: var(--button-hover-color);
-      --outline-text-color: var(--button-hover-border-color);
-    }
-  }
-  &:is(:active, &:focus-visible, &:focus):not(:disabled, :hover) {
-    --outline-bg: #3f3f80;
-    --outline-color: var(--button-hover-border-color);
-    --outline-text-color: var(--button-hover-color);
-    background-color: var(--outline-bg);
-  }
-
-  &:is(.button--whatsapp) {
-    --button-height: 52px;
-    --button-bg: hsla(var(--whatsapp-bg-hsl), 0.15);
-    --button-color: var(--whatsapp-color);
-    --button-hover-bg: var(--whatsapp-hover-bg);
-    --button-hover-color: var(--whatsapp-hover-color);
-    &:is(:active, .button:focus-visible, .button:focus) {
-      --outline-bg: var(--whatsapp-hover-color);
-      --outline-color: var(--whatsapp-color);
-      --outline-text-color: var(--whatsapp-hover-color);
-    }
-  }
-  &:is(.button--register) {
-    --button-height: 52px;
-    --button-bg: hsla(var(--accent-hsl), 0.15);
-    --button-color: var(--accent);
-    --button-hover-bg: var(--accent);
-    --button-hover-color: var(--light);
-    &:is(:active, .button:focus-visible, .button:focus) {
-      --outline-bg: var(--accent);
-      --outline-color: var(--accent);
-      --outline-text-color: var(--light);
-      color: var(--outline-text-color);
-    }
-  }
-  &:is(.button--accent) {
-    --button-height: 52px;
-    --button-bg: hsla(var(--accent-hsl), 1);
-    --button-color: var(--light);
-    --button-hover-bg: var(--light);
-    --button-hover-color: var(--accent);
-    &:is(:active, .button:focus-visible, .button:focus) {
-      --outline-bg: var(--accent);
-      --outline-color: var(--accent);
-      --outline-text-color: var(--light);
-      color: var(--outline-text-color);
-    }
-    &:is(:active, .button:focus-visible, .button:focus):hover {
-      --outline-text-color: var(--accent);
-      color: var(--outline-text-color);
-    }
-  }
-}
-
-prism-editor {
-  display: grid;
-  height: 30em;
-  overflow: hidden;
-}

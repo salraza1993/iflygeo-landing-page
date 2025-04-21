@@ -1,5 +1,5 @@
-import Image from "next/image"
-import SquarePattern from "../shared/SquarePattern"
+import React from 'react'
+import SquarePattern from '../shared/SquarePattern'
 
 function HeroSection() {
   return (
@@ -10,16 +10,13 @@ function HeroSection() {
         <div className="animated-border-box"></div>
         <div className="hero-content">
           <h2 className="heading gilroy_thin">
-            Enhance Your <strong>Travel Business</strong> with seamless <strong> ✈️ Flight  🛏️ and Hotel </strong> Solutions
+            Redefining <strong>Air Travel Distribution</strong>
           </h2>
-          <div className="down-arrow">
-            <Image src="/images/down-arrow.png" alt="down-arrow" fill />
-          </div>
         </div>
       </div>
       <div className="sub-content">
         <h5 className="fw-ultra-light">
-          Access a vast network of airlines and hotel properties worldwide through our seamless <strong>B2B platform</strong>.
+          We simplify air distribution with flexible, scalable, and cost-effective solutions for airlines and travel sellers.
         </h5>
       </div>
     </section>

@@ -1,9 +1,14 @@
+'use client'
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
+import React, { useState } from 'react'
 import CodeEditor from './CodeEditor'
 
 function ProductSection() {
+  const [activeTabButton, setActiveTabButton] = useState<string>('tab-stp');
+  const tabButtonHandler = (tabName:string) => {
+    setActiveTabButton(tabName)
+  }
   return (
     <section className='product-section'>
       <div className="section-header">
@@ -13,12 +18,13 @@ function ProductSection() {
         <p>Choose the solution that fits your needs - whether you&#39;re building a <strong>booking platform</strong> or integrating with powerful travel <strong>APIs</strong>.</p>
       </div>
       <div className="section-content">
-        <div className="product-tab-header">
-          <a href='#tab-1' className="tab-item h6 active" tabIndex={0}>Smart Travel Portal (STP)</a>
-          <a href='#tab-2' className="tab-item h6" tabIndex={0}>Smart Travel API (STA)</a>
+        <div className={`product-tab-header ${activeTabButton}`}>
+          <a href='#tab-stp' className={activeTabButton === 'tab-stp' ? "active tab-item h6" : "tab-item h6"} onClick={() => tabButtonHandler('tab-stp')} tabIndex={0}>Smart Travel Portal (STP)</a>
+          <a href='#tab-sta' className={activeTabButton === 'tab-sta' ? "active tab-item h6" : "tab-item h6"} onClick={() => tabButtonHandler('tab-sta')} tabIndex={0}>Smart Travel API (STA)</a>
+          <span className={`active-strip ${activeTabButton}`}></span>
         </div>
         <div className="product-tab-data-wrapper">
-          <div className="tab-1" id="stp">
+          <div className="tab-1" id="tab-stp">
             <div className="product-detail-block stp-block">
               <span className="strip-start"></span>
               <span className="strip-end"></span>
@@ -96,7 +102,7 @@ function ProductSection() {
               </div>
             </div>
           </div>
-          <div className="tab-2" id="sta">
+          <div className="tab-2" id="tab-sta">
             <div className="product-detail-block sta-block">
               <span className="strip-start"></span>
               <span className="strip-end"></span>
