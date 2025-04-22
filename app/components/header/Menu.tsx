@@ -20,7 +20,7 @@ function Menu() {
   const [menuList, setMenuList] = useState<MenuListType[]>([
     { label: 'Company', path: '/company', isActive: false },
     { label: 'Career', path: '/career', isActive: false },
-    { label: 'contact', path: '/contact', isActive: false }
+    { label: 'Contact', path: '/contact', isActive: false }
   ]);
 
   const updateStripPosition = useCallback(() => {

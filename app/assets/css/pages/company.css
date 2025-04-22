@@ -3,7 +3,7 @@
 }
 
 .hero-section {
-  --content-max-width: calc(55rem + 5vw);
+  --content-max-width: calc(65rem + 5vw);
   position: relative;
   width: 100%;
   isolation: isolate;
@@ -16,6 +16,8 @@
     --heading-font-size: clamp(2rem, 5vw, 4rem);
     --block-padding-y: calc(1.5rem + 1.5vw);
     --block-padding-x: calc(1.5rem + 1.5vw);
+    --banner-height: 330px;
+    --avatar-width: calc(500px + 1vw);
     position: relative;
     margin-inline: auto;
     z-index: 1;
@@ -26,7 +28,7 @@
     justify-content: center;
     align-items: center;
 
-    .animated-border-box,
+    /* .animated-border-box,
     .animated-border-box-glow {
       position: absolute;
       overflow: hidden;
@@ -65,18 +67,21 @@
       top: 1px;
       width: calc(100% - 2px);
       height: calc(100% - 2px);
-    }
+    } */
 
     .hero-content {
       display: flex;
-      justify-content: center;
-      padding-block: var(--block-padding-y);
+      justify-content: space-between;
+      align-items: center;
       padding-inline: var(--block-padding-x);
+      padding-inline-end: calc(var(--block-padding-x) / 2);
       position: relative;
-      background-color: hsl(240, 54%, 21%);
+      color: var(--body-bg);
+      background-image: linear-gradient(35deg, #F6CDAF, #DADAFF);
       isolation: isolate;
+      width: 100%;
 
-      &::before {
+      /* &::before {
         content: "";
         position: absolute;
         inset: 0;
@@ -84,13 +89,38 @@
         background: transparent url(/images/wave2.gif) no-repeat;
         background-blend-mode: luminosity;
         z-index: -1;
-      }
+      } */
 
       .heading {
         /* font-size: var(--heading-font-size); */
         text-transform: uppercase;
-        text-align: center;
         text-wrap: pretty;
+        max-width: min-content;
+        line-height: 1.1;
+      }
+
+      .team-avatars {
+        position: relative;
+        height: var(--banner-height);
+        width: var(--avatar-width);
+        overflow: clip;
+        &::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          scale: 0.6;
+          border-radius: 100%;
+          background-color: var(--accent);
+          filter: blur(100px);
+          opacity: 0.65;
+          inset-block-end: calc(0px - var(--banner-height) / 2);
+        }
+        img {
+          position: relative !important;
+          object-fit: contain;
+          object-position: bottom;
+          display: block;
+        }
       }
     }
   }
@@ -113,7 +143,7 @@
     width: 100%;
     max-width: var(--content-max-width);
     margin-inline: auto;
-    margin-block-start: calc(4rem + 2vw);
+    margin-block-start: calc(1rem + 1vw);
     text-align: center;
     text-wrap: balance;
   }

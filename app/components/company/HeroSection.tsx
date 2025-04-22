@@ -1,5 +1,6 @@
 import React from 'react'
 import SquarePattern from '../shared/SquarePattern'
+import Image from 'next/image'
 
 function HeroSection() {
   return (
@@ -10,8 +11,11 @@ function HeroSection() {
         <div className="animated-border-box"></div>
         <div className="hero-content">
           <h2 className="heading gilroy_thin">
-            Redefining <strong>Air Travel Distribution</strong>
+            Redefining <strong className='text-accent'>Air Travel</strong> <strong className="text-primary">Distribution</strong>
           </h2>
+          <div className="team-avatars">
+            <Image src={'/images/team-avatars.png'} alt={'Team Avatars'} fill />
+          </div>
         </div>
       </div>
       <div className="sub-content">
