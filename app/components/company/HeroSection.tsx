@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 function HeroSection() {
   return (
-    <section className='hero-section'>
+    <section className='about-hero-section'>
       <SquarePattern />
       <div className="hero-content-wrapper">
         <div className="animated-border-box-glow"></div>
@@ -19,7 +19,7 @@ function HeroSection() {
         </div>
       </div>
       <div className="sub-content">
-        <h5 className="fw-ultra-light">
+        <h5 className="fw-ultra-light fw-bold">
           We simplify air distribution with flexible, scalable, and cost-effective solutions for airlines and travel sellers.
         </h5>
       </div>

@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Header from "./components/header/Header";
 import {
   inter,
   Roboto,
@@ -15,6 +14,8 @@ import {
   gilroyBold,
 } from "./../public/Fonts";
 import "@/app/assets/css/globals.css";
+import {  } from "next/navigation";
+import LayoutManager from "./components/layout/LayoutManager";
 
 
 export const metadata: Metadata = {
@@ -23,6 +24,7 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode; }>) {
+  
   const bodyFonts = [
     inter.variable, 
     Roboto.variable, 
@@ -39,11 +41,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" className={bodyFonts}>
       <body>
-        <Header />
-        {children}
-        <footer>
-          {/* Add footer content here */}
-        </footer>
+        <LayoutManager>{children}</LayoutManager>
       </body>
     </html>
   );

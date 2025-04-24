@@ -1,7 +1,7 @@
 .pattern {
   position: absolute;
   width: 100%;
-  height: calc(100% + var(--header-height) + var(--header-height-gaps));
+  height: var(--square-pattern-height);
   inset: 0;
   z-index: -1;
 
@@ -15,11 +15,11 @@
   &::before {
     background-image: url('/images/square-pattern.svg');
     background-repeat: repeat;
-    opacity: 0.2;
+    opacity: var(--square-pattern-opacity);
   }
 
   &::after {
-    background-image: linear-gradient(to top, hsla(var(--body-bg-hsl), 0.9) 0%, hsla(var(--body-bg-hsl), 0) 100%);
+    background-image: var(--square-gradient-bg);
   }
 }
 
@@ -225,6 +225,7 @@
     background-image: url('/images/footer-bg.png');
     background-position: center bottom;
     background-attachment: fixed;
+    background-size: 100%;
     z-index: -1;
 
     &::after {

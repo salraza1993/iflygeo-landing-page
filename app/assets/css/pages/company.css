@@ -2,7 +2,7 @@
   position: relative;
 }
 
-.hero-section {
+.about-hero-section {
   --content-max-width: calc(65rem + 5vw);
   position: relative;
   width: 100%;
@@ -81,15 +81,16 @@
       isolation: isolate;
       width: 100%;
 
-      /* &::before {
+      &::before {
         content: "";
         position: absolute;
         inset: 0;
-        opacity: 0.15;
+        opacity: 0.08;
         background: transparent url(/images/wave2.gif) no-repeat;
         background-blend-mode: luminosity;
+        background-position: center bottom 90%;
         z-index: -1;
-      } */
+      }
 
       .heading {
         /* font-size: var(--heading-font-size); */

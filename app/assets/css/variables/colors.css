@@ -6,7 +6,7 @@
   --primary-100-hsl: 240, 44%, 26%;
   --header-bg-hsl: 240, 44%, 26%;
   --light-hsl: 0, 0%, 100%;
-  --dark-hsl: 240, 9%, 30%;
+  --dark-hsl: 0, 0%, 15%;
 
   --body-bg: hsla(var(--body-bg-hsl), 1);
   --body-color: hsla(var(--body-color-hsl), 1);
@@ -31,4 +31,5 @@
   --button-hover-bg: var(--accent);
   --button-hover-color: var(--light);
   --button-hover-border-color: hsla(var(--light-hsl), 1);
+  --square-gradient-bg: linear-gradient(to top, hsla(var(--body-bg-hsl), 0.9) 0%, hsla(var(--body-bg-hsl), 0) 100%);
 }

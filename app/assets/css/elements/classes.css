@@ -54,10 +54,10 @@
 .text-primary {
   color: var(--primary) !important;
 }
-.text--dark {
+.text-dark {
   color: var(--dark) !important;
 }
-.text--light {
+.text-light {
   color: var(--light) !important;
 }
 
