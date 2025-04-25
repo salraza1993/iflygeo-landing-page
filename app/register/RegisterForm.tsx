@@ -55,7 +55,7 @@ function RegisterForm() {
       } else {
         setSuccessMsg("Oops! Kindly check your form before submitting.");
       }
-    } catch (error) {
+    } catch {
       setSuccessMsg("Oops! Unable to send request now. Kindly eract us at info@iflygeo.com");
     }
   };
