@@ -64,6 +64,9 @@ header.main-header {
       padding: 0;
       display: flex;
       isolation: isolate;
+      @media (width < 1024px) {
+        display: none !important;
+      }
 
       & .menu-item {
         position: relative;

@@ -179,13 +179,14 @@ function RegisterForm() {
         <label className="input-label">Enter your query (optional)</label>
         <textarea placeholder="Enter your query (optional)" className="input-field textarea" {...register("message")} rows={4} />
       </div>
-
-      <button type="submit" className={`button button--${buttonStatusClass(formStates)}`} data-icon="end">
-        <span className="">{buttonText}</span>
-        <span className="icon">
-          <i className={`fa-solid fa-${buttonIconClass(formStates)}`}></i>
-        </span>
-      </button>
+      <div className={"input-group full-edge"}>
+        <button type="submit" className={`button button--${buttonStatusClass(formStates)}`} data-icon="end">
+          <span className="">{buttonText}</span>
+          <span className="icon">
+            <i className={`fa-solid fa-${buttonIconClass(formStates)}`}></i>
+          </span>
+        </button>
+      </div>
       {
         successMsg && <div className={"input-group full-edge"}>
           <div className={`form-message-box type--${formStates}`}>{successMsg}</div>
