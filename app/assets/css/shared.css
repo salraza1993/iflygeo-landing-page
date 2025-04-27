@@ -97,7 +97,7 @@
     }
   }
   
-  &:is(.button--register) {
+  &:is(.button--register, .button-register) {
     --button-icon-font-size: 1.5rem;
     --button-height: 52px;
     --button-bg: hsla(var(--accent-hsl), 0.08);
@@ -113,8 +113,7 @@
     }
   }
 
-  &:is(.button--accent) {
-    --button-height: 52px;
+  &:is(.button--accent, .button-accent) {
     --button-bg: hsla(var(--accent-hsl), 1);
     --button-color: var(--light);
     --button-hover-bg: var(--light);
@@ -129,6 +128,43 @@
 
     &:is(:active, .button:focus-visible, .button:focus):hover {
       --outline-text-color: var(--accent);
+      color: var(--outline-text-color);
+    }
+  }
+  &:is(.button--success, .button--green, .button-success, .button-green) {
+    --button-height: 52px;
+    --button-bg: hsla(var(--green-hsl), 1);
+    --button-color: var(--light);
+    --button-hover-bg: var(--light);
+    --button-hover-color: var(--green);
+
+    &:is(:active, .button:focus-visible, .button:focus) {
+      --outline-bg: var(--green);
+      --outline-color: var(--green);
+      --outline-text-color: var(--light);
+      color: var(--outline-text-color);
+    }
+
+    &:is(:active, .button:focus-visible, .button:focus):hover {
+      --outline-text-color: var(--green);
+      color: var(--outline-text-color);
+    }
+  }
+  &:is(.button--failed, .button--danger, .button--rejected, .button-failed, .button-danger, .button-rejected) {
+    --button-bg: hsla(var(--red-hsl), 1);
+    --button-color: var(--light);
+    --button-hover-bg: var(--light);
+    --button-hover-color: var(--red);
+
+    &:is(:active, .button:focus-visible, .button:focus) {
+      --outline-bg: var(--red);
+      --outline-color: var(--red);
+      --outline-text-color: var(--light);
+      color: var(--outline-text-color);
+    }
+
+    &:is(:active, .button:focus-visible, .button:focus):hover {
+      --outline-text-color: var(--red);
       color: var(--outline-text-color);
     }
   }

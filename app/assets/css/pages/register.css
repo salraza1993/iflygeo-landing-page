@@ -132,7 +132,7 @@
   width: 100%;
   margin-block-start: calc(1rem + 0.5vw);
   
-  .button.button--accent {
+  .button {
     --button-font-size: 1.25rem;
     --button-height: 58px;
   }
@@ -215,6 +215,7 @@
         &:not(.textarea) { height: var(--input-height); }
         &::placeholder {
           color: inherit;
+          opacity: 0.8;
         }
         &:-webkit-autofill {
           -webkit-box-shadow: 0 0 0 30px var(--input-bg) inset !important;
@@ -244,5 +245,21 @@
   }
   button {
     max-width: max-content;
+  }
+  .form-message-box {
+    position: relative;
+    padding-inline: 1rem;
+    padding-block: 0.75rem;
+    background-color: var(--message-box-bg, hsla(var(--primary-hsl), 0.15));
+    color: var(--message-box-color, var(--primary));
+    border-radius: var(--message-box-border-radius, var(--border-radius));
+    &:is(.type--success, .type--green) {
+      --message-box-bg: hsla(var(--green-hsl), 0.15);
+      --message-box-color: var(--green);
+    }
+    &:is(.type--failed, .type--rejected, .type--danger) {
+      --message-box-bg: hsla(var(--red-hsl), 0.15);
+      --message-box-color: var(--red);
+    }
   }
 }

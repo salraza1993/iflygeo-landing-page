@@ -8,6 +8,11 @@
   --light-hsl: 0, 0%, 100%;
   --dark-hsl: 0, 0%, 15%;
 
+  --green-hsl: 145, 100%, 17%;
+  --green: hsl(var(--green-hsl));
+  --red-hsl: 0, 85%, 47%;
+  --red: hsl(var(--red-hsl));
+
   --body-bg: hsla(var(--body-bg-hsl), 1);
   --body-color: hsla(var(--body-color-hsl), 1);
   --accent: hsl(var(--accent-hsl), 1);

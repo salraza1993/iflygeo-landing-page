@@ -22,8 +22,11 @@ type FormValues = {
 };
 function RegisterForm() {
   const COUNTRY_API_URL = "https://restcountries.com/v3.1/all?fields=name,cca2";
+  const FORM_SUBMISSION_API_URL = "https://coreconnect-stage.azurewebsites.net/form/Guest/submit";
   const [countries, setCountries] = useState<Country[]>([]);
-  const [successMsg, setSuccessMsg] = useState("");
+  const [successMsg, setSuccessMsg] = useState<string>("");
+  const [formStates, setFormStates] = useState<string>('none');
+  const [buttonText, setButtonText] = useState<string>("Start your journey");
   const {
     register,
     handleSubmit,
@@ -34,8 +37,10 @@ function RegisterForm() {
 
   const onSubmit = async (data: FormValues) => {
     setSuccessMsg("");
+    setButtonText('Processing...');
+    setFormStates('pending');
     try {
-      const response = await fetch("https://coreconnect-stage.azurewebsites.net/form/Guest/submit", {
+      const response = await fetch(FORM_SUBMISSION_API_URL, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -43,20 +48,28 @@ function RegisterForm() {
         body: JSON.stringify(data),
       });
       if (!response.ok) {
+        setButtonText('Oops! Something went wrong. Try Again')
+        setFormStates('failed')
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       const finalData = await response.json();
-      console.log("Success:", finalData);
+      // console.log("Success:", finalData);
       if (finalData.status == 200) {
-        setSuccessMsg(finalData.message);
+        setButtonText('Successfully Submitted');
+        setFormStates('success')
+        setSuccessMsg("Your request has been successfully submitted. We'll contact you soon. Stay tuned!");
         setTimeout(() => {
           window.location.reload();
-        }, 3000);
+        }, 5000);
       } else {
+        setButtonText('Rejected!');
+        setFormStates('failed')
         setSuccessMsg("Oops! Kindly check your form before submitting.");
       }
     } catch {
-      setSuccessMsg("Oops! Unable to send request now. Kindly eract us at info@iflygeo.com");
+      setButtonText('Rejected!');
+      setFormStates('failed')
+      setSuccessMsg("Oops! Unable to send request now. Kindly contact us at info@iflygeo.com");
     }
   };
 
@@ -65,6 +78,20 @@ function RegisterForm() {
     if (touched[field]) return "input-group success";
     return "input-group";
   };
+
+  const buttonStatusClass = (state: string):string => {
+    if (state === 'pending') return 'primary'
+    else if (state === 'success') return 'success'
+    else if (state === 'failed') return 'danger'
+    else return "accent"
+  }
+  const buttonIconClass = (state: string): string => {
+    if (state === 'pending') return 'spinner fa-pulse'
+    else if (state === 'success') return 'circle-check'
+    else if (state === 'failed') return 'circle-info'
+    else return "paper-plane"
+
+  }
 
   useEffect(() => {
     fetch(COUNTRY_API_URL)
@@ -153,15 +180,17 @@ function RegisterForm() {
         <textarea placeholder="Enter your query (optional)" className="input-field textarea" {...register("message")} rows={4} />
       </div>
 
-      <button type="submit" className="button button--accent" data-icon="end">
-        <span className="">Start your journey</span>
+      <button type="submit" className={`button button--${buttonStatusClass(formStates)}`} data-icon="end">
+        <span className="">{buttonText}</span>
         <span className="icon">
-          <i className="fa-solid fa-arrow-right"></i>
+          <i className={`fa-solid fa-${buttonIconClass(formStates)}`}></i>
         </span>
       </button>
-      <div className={"input-group full-edge"}>
-        <span>{successMsg}</span>
-      </div>
+      {
+        successMsg && <div className={"input-group full-edge"}>
+          <div className={`form-message-box type--${formStates}`}>{successMsg}</div>
+        </div>
+      }
     </form>
   );
 }
