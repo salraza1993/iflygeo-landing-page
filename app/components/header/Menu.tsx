@@ -18,9 +18,9 @@ function Menu() {
   const [activeStripOpacity, setActiveStripOpacity] = useState(1);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [menuList, setMenuList] = useState<MenuListType[]>([
-    { label: 'Company', path: '/company', isActive: false },
-    { label: 'Career', path: '/career', isActive: false },
-    { label: 'Contact', path: '/contact', isActive: false }
+    // { label: 'Company', path: '/company', isActive: false },
+    // { label: 'Career', path: '/career', isActive: false },
+    // { label: 'Contact', path: '/contact', isActive: false }
   ]);
 
   const updateStripPosition = useCallback(() => {
