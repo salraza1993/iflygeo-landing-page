@@ -19,8 +19,8 @@ import LayoutManager from "./components/layout/LayoutManager";
 
 
 export const metadata: Metadata = {
-  title: "IFlyGeo | Welcome : Home Page",
-  description: "A modern website with dark mode theme",
+  title: "iFlyGeo | Grow Smarter, Sell Faster",
+  description: "Book flights, hotels, and travel packages with iFlyGeo. Affordable prices, global destinations, and 24/7 support for your next adventure.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode; }>) {

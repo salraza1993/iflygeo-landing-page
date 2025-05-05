@@ -5,22 +5,22 @@ function CopyWriteStrip() {
     <footer className="footer-copy-write">
       <div className="footer-copy-write-wrapper">
         <div className="start-block">
-          <small>© {currentYear} <strong>IFlyGeo</strong> &nbsp;&nbsp; | &nbsp;&nbsp; All rights reserved</small>
+          <small>&copy; {currentYear} <strong>iFlyGeo</strong> &nbsp;&nbsp; | &nbsp;&nbsp; All rights reserved</small>
         </div>
         <div className="end-block">
           <small>Stay connected:</small>
           <ul className="social-list">
             <li className="social-list-item">
-              <a href="https://facebook.com" target="_blank"><i className="fa-brands fa-facebook-f"></i></a>
+              <a href="https://facebook.com/iflygeo" target="_blank"><i className="fa-brands fa-facebook-f"></i></a>
             </li>
             <li className="social-list-item">
-              <a href="https://x.com" target="_blank"><i className="fa-brands fa-x-twitter"></i></a>
+              <a href="https://x.com/iflygeo" target="_blank"><i className="fa-brands fa-x-twitter"></i></a>
             </li>
             <li className="social-list-item">
-              <a href="https://instagram.com" target="_blank"><i className="fa-brands fa-instagram"></i></a>
+              <a href="https://instagram.com/iflygeo" target="_blank"><i className="fa-brands fa-instagram"></i></a>
             </li>
             <li className="social-list-item">
-              <a href="https://linkedin.com" target="_blank"><i className="fa-brands fa-linkedin-in"></i></a>
+              <a href="https://linkedin.com/company/iflygeo/" target="_blank"><i className="fa-brands fa-linkedin-in"></i></a>
             </li>
           </ul>
         </div>
