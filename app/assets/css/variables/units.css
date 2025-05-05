@@ -16,4 +16,5 @@
   --button-icon-font-size: 1rem;
   --square-pattern-height: calc(100% + var(--header-height) + var(--header-height-gaps));
   --square-pattern-opacity: 0.2;
+  --page-padding-x: calc(1rem + 2vw);
 }

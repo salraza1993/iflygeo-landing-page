@@ -49,31 +49,34 @@ function Menu() {
   }, [pathname, updateStripPosition]);
 
   return (
-    <ul
-      className="top-menu"
-      style={
+    <div className='menu-wrapper'>
+      <button className="more-menu-icon"><i className="fa-solid fa-ellipsis-v"></i></button>
+      <ul
+        className="top-menu active"
+        style={
+          {
+            '--list-width': `${menuWidth}px`,
+            '--active-strip-margin-x': `${activeStripMarginX}px`,
+          } as React.CSSProperties
+        }
+      >
         {
-          '--list-width': `${menuWidth}px`,
-          '--active-strip-margin-x': `${activeStripMarginX}px`,
-        } as React.CSSProperties
-      }
-    >
-      {
-        menuList.map((menu: MenuListType, index: number) => {
-          return <li key={index} className={pathname === menu.path ? 'menu-item active' : 'menu-item'}>
-            <Link href={menu.path} className="menu-link">{menu.label}</Link>
-          </li>
-        })
-      }
-      <li
-        className="active-strip"
-        style={{
-          marginInlineStart: `${activeStripMarginX}px`,
-          opacity: activeStripOpacity,
-          transition: 'all 0.3s ease',
-        }}
-      ></li>
-    </ul>
+          menuList.map((menu: MenuListType, index: number) => {
+            return <li key={index} className={pathname === menu.path ? 'menu-item active' : 'menu-item'}>
+              <Link href={menu.path} className="menu-link">{menu.label}</Link>
+            </li>
+          })
+        }
+        <li
+          className="active-strip"
+          style={{
+            marginInlineStart: `${activeStripMarginX}px`,
+            opacity: activeStripOpacity,
+            transition: 'all 0.3s ease',
+          }}
+        ></li>
+      </ul>
+    </div>
   );
 }
 

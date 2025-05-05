@@ -41,9 +41,10 @@ function ProductSection() {
                   </div>
                 </div>
                 <div className="block-end">
-                  <div className="product-screenshot">
+                  <picture className="product-screenshot">
+                    <source media="(max-width: 1200px)" srcSet="/images/dashboard-ui-full.svg" />
                     <Image src="/images/dashboard-ui.svg" alt="STP Screenshot" fill />
-                  </div>
+                  </picture>
                 </div>
               </div>
               <div className="block-content">
@@ -90,13 +91,15 @@ function ProductSection() {
                     <div className="icon">
                       <Image src="/images/support-avatar.png" alt="Support Avatar" fill />
                     </div>
-                    <h6 className="">Launch Your Travel Business Today</h6>
-                    <Link href="/register" className="button button--accent" data-icon="end">
-                      <span className="btn-text">Get Started</span>
-                      <span className="icon">
-                        <i className="fa-solid fa-arrow-right"></i>
-                      </span>
-                    </Link>
+                    <div className="content">
+                      <h6 className="">Launch Your Travel Business Today</h6>
+                      <Link href="/register" className="button button--accent" data-icon="end">
+                        <span className="btn-text">Get Started</span>
+                        <span className="icon">
+                          <i className="fa-solid fa-arrow-right"></i>
+                        </span>
+                      </Link>
+                    </div>
                   </li>
                 </ul>
               </div>
@@ -149,13 +152,15 @@ function ProductSection() {
                         <div className="icon">
                           <Image src="/images/support-avatar.png" alt="Support Avatar" fill />
                         </div>
-                        <h6 className="">Launch Your Travel Business Today</h6>
-                        <Link href="/register" className="button button--accent" data-icon="end">
-                          <span className="btn-text">Get Started</span>
-                          <span className="icon">
-                            <i className="fa-solid fa-arrow-right"></i>
-                          </span>
-                        </Link>
+                        <div className="text">
+                          <h6 className="">Launch Your Travel Business Today</h6>
+                          <Link href="/register" className="button button--accent" data-icon="end">
+                            <span className="btn-text">Get Started</span>
+                            <span className="icon">
+                              <i className="fa-solid fa-arrow-right"></i>
+                            </span>
+                          </Link>
+                        </div>
                       </li>
                     </ul>
                   </div>

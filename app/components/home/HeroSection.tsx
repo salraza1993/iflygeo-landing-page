@@ -9,9 +9,9 @@ function HeroSection() {
         <div className="animated-border-box-glow"></div>
         <div className="animated-border-box"></div>
         <div className="hero-content">
-          <h2 className="heading gilroy_thin">
+          <h1 className="heading gilroy_thin">
             Enhance Your <strong>Travel Business</strong> with seamless <strong> ✈️ Flight  🛏️ and Hotel </strong> Solutions
-          </h2>
+          </h1>
           <div className="down-arrow">
             <Image src="/images/down-arrow.png" alt="down-arrow" fill />
           </div>
