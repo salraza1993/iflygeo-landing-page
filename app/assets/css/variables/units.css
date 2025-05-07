@@ -17,4 +17,11 @@
   --square-pattern-height: calc(100% + var(--header-height) + var(--header-height-gaps));
   --square-pattern-opacity: 0.2;
   --page-padding-x: calc(1rem + 2vw);
+  @media (width < 768px) {
+    --header-height: 4.5rem;
+    --body-top-padding: calc(var(--header-height) + 0.75rem);
+    --mobile-aside-gutter: 5vw;
+    --border-radius: 0.35rem;
+    --mobile-contact-buttons-height: 75px;
+  }
 }

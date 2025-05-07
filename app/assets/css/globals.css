@@ -56,6 +56,9 @@ body {
     background-blend-mode: luminosity;
     z-index: -1;
   }
+  @media (width < 768px) {
+    padding-block-end: var(--mobile-contact-buttons-height);
+  }
 }
 
 

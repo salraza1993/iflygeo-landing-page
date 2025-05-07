@@ -27,7 +27,7 @@ h6, .h6 {
 }
 
 p, .p {
-  font-size: clamp(1.05rem, 2vw, 1.05rem);
+  font-size: clamp(0.90rem, 2vw, 1.05rem);
   line-height: 1.35rem;
 }
 small, .small {

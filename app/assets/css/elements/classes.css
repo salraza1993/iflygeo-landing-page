@@ -93,3 +93,9 @@
 .fw-semiBold { font-weight: 600; }
 .fw-bold { font-weight: 700; }
 
+@media (width < 768px) {
+  .hide-in-mobile {display: none !important; }
+  .show-in-mobile {display: block !important; }
+  .show-in-mobile--flex {display: flex !important; }
+  .show-in-mobile--grid {display: grid !important; }
+}

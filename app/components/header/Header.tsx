@@ -1,3 +1,4 @@
+'use client'
 import Link from "next/link"
 import Logo from "./Logo"
 import Menu from "./Menu"
@@ -11,7 +12,7 @@ function Header() {
           <Logo />
           <Menu />
         </div>
-        <div className="block-end">
+        <div className="block-end hide-in-mobile">
           <Link href={'/register'} className="button button--register" data-icon="start">
             <span className="icon"><i className="fa-solid fa-user-tie"></i></span>
             <span>Register Now</span>

@@ -9,4 +9,5 @@
   --outline-radius: var(--border-radius);
   --font-weight: 400; 
   --body-font-family: var(--inter), var(--roboto), Arial, Helvetica, sans-serif;
+  --max-z-index: 11;
 }

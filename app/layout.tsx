@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import {
   inter,
   Roboto,
@@ -17,11 +17,44 @@ import "@/app/assets/css/globals.css";
 import {  } from "next/navigation";
 import LayoutManager from "./components/layout/LayoutManager";
 
-
+const BASE_URL = 'https://iflygeo.com/';
 export const metadata: Metadata = {
-  title: "iFlyGeo | Grow Smarter, Sell Faster",
+  metadataBase: new URL(BASE_URL),
+  title: {
+    template: "%s | iFlyGeo",
+    default: "iFlyGeo | Grow Smarter, Sell Faster"
+  },
   description: "Book flights, hotels, and travel packages with iFlyGeo. Affordable prices, global destinations, and 24/7 support for your next adventure.",
+  generator: 'Next.js',
+  applicationName: 'iFlyGeo',
+  referrer: 'origin-when-cross-origin',
+  keywords: ['Travel', 'Travel Technology', 'Travel Aggregator', 'Travel Marketplace'],
+  creator: 'iFlyGeo',
+  alternates: {
+    canonical: '/',
+    languages: {'en-US': '/en-US',},
+  },
+  // openGraph: {
+  //   images: '/opengraph-image.jpg',
+  // },
+  formatDetection: {
+    email: true,
+    address: true,
+    telephone: true,
+  },
 };
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  colorScheme: 'dark',
+  themeColor: [
+    { media: "(prefers-color-scheme: dark)", color: "#FF6700" },
+    { media: "(prefers-color-scheme: light)", color: "#1511B1" }
+  ],
+  
+}
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode; }>) {
   

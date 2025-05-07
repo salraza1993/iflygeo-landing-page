@@ -3,6 +3,7 @@
 import { usePathname } from 'next/navigation';
 import LayoutWithoutHeaderFooter from './LayoutWithoutHeaderFooter';
 import LayoutWithHeaderFooter from './LayoutWithHeaderFooter';
+import MobileContactButtons from '../MobileContactButtons';
 
 export default function LayoutManager({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -10,5 +11,8 @@ export default function LayoutManager({ children }: { children: React.ReactNode 
 
   return layoutWithoutHeader.includes(pathname)
     ? <LayoutWithoutHeaderFooter>{children}</LayoutWithoutHeaderFooter>
-    : <LayoutWithHeaderFooter>{children}</LayoutWithHeaderFooter>;
+    : <LayoutWithHeaderFooter>
+      {children}
+      <MobileContactButtons />
+    </LayoutWithHeaderFooter>;
 }

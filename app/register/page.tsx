@@ -4,11 +4,17 @@ import RegisterForm from "./RegisterForm";
 import Link from "next/link";
 import Logo from "../components/header/Logo";
 import Image from "next/image";
+import { Metadata } from "next";
 
 type ListDataTypes = {
   icon: string,
   heading: string,
   text: string
+}
+
+export const metadata: Metadata = {
+  title: "Register with iFlyGeo",
+  description: "Launch Your Travel Sales Business Today with Seamless Tech and Global Content",
 }
 export default function SignupPage() {
   const contentList: ListDataTypes[] = [

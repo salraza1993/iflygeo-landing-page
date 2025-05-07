@@ -87,8 +87,6 @@ function CodeEditor() {
               </li>
             })
           }
-          {/* <li className="tab-item" tabIndex={0} role="tabItem" onClick={(e) => tabClickHandler(e)}>Book Flight</li>
-          <li className="tab-item" tabIndex={0} role="tabItem" onClick={(e) => tabClickHandler(e)}>Post Booking Requests</li> */}
           <span className="active-strip" style={{
             '--strip-width': `${activeStrip}px`,
             '--strip-inset-x': `${activeStripInsetX}px`
