@@ -51,4 +51,5 @@ function ProductHighlightSection() {
   )
 }
 
+
 export default ProductHighlightSection;
