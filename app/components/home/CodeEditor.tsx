@@ -9,7 +9,7 @@ type TabItemsType = {
 };
 
 function CodeEditor() {
-  const [activeStrip, setActiveStrip] = useState<number>(131);
+  const [activeStrip, setActiveStrip] = useState<number>(134.5);
   const [activeStripInsetX, setActiveStripInsetX] = useState<number>(0);
   const [tabs, setTabs] = useState<TabItemsType[]>([
     { id: 'tab-1', label: 'Flight Search', isActive: true},
@@ -59,30 +59,46 @@ function CodeEditor() {
   }
   `;
 
-  const tabClickHandler = (event: React.MouseEvent<HTMLLIElement>, item: TabItemsType) => {
-    const tabItem = event.currentTarget;
-    const parent = tabItem.parentElement;
+  const tabClickHandler = (event: React.MouseEvent<HTMLLIElement> | React.KeyboardEvent<HTMLLIElement>, item: TabItemsType) => {
+    const tabItem = event.currentTarget as HTMLLIElement;
+    const parent = tabItem.parentElement as HTMLLIElement;
     setActiveTab(item);
     setTabs(tabs.map((tab: TabItemsType) => ({...tab, isActive: tab.id === item.id})));
 
     if (parent) {
       const tabItemRect = tabItem.getBoundingClientRect();
       const parentRect = parent.getBoundingClientRect();
-
-      const activeStripWidth = tabItemRect.width;
-      const activeStripInsetX = tabItemRect.left - parentRect.left;
+      
+      const activeStripWidth = Math.round(tabItemRect.width);
+      const activeStripInsetX = Math.round(tabItemRect.left - parentRect.left);
       setActiveStrip(activeStripWidth);
       setActiveStripInsetX(activeStripInsetX);
     }
   };
+  const onKeydownHandler = (event: React.KeyboardEvent<HTMLLIElement>, item: TabItemsType) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      tabClickHandler(event, item);
+    }
+  }
   
   return (
     <div className='code-editor-wrapper'>
       <div className="code-editor-header">
-        <ul className="tabs">
+        <ul className="tabs" role="tablist">
           {
             tabs.map((item: TabItemsType, index: number): React.ReactNode => {
-              return <li key={index} className={item.isActive ? "tab-item active" : "tab-item"} tabIndex={0} role="tabItem" onClick={(e) => tabClickHandler(e, item)}>
+              const isSelected = item.isActive;
+              return <li
+                key={index}
+                id={`tab-${index}`}
+                className={isSelected ? "tab-item active" : "tab-item"}
+                role="tab"
+                aria-selected={isSelected}
+                aria-controls={`tabpanel-${index}`}
+                tabIndex={0}
+                onClick={(e) => tabClickHandler(e, item)}
+                onKeyDown={(e) => onKeydownHandler(e, item)}>
                 {item.label}
               </li>
             })
@@ -93,7 +109,7 @@ function CodeEditor() {
           } as React.CSSProperties}></span>
         </ul>
       </div>
-      <div className="code-editor-body">
+      <div className="code-editor-body" role="tab-body">
         {tabs.map((tab: TabItemsType, index: number) => (
           activeTab.id === tab.id && (<CodeSyntaxHighlighter key={index} code={codeSample} />)
         ))}
