@@ -22,6 +22,6 @@
     --body-top-padding: calc(var(--header-height) + 0.75rem);
     --mobile-aside-gutter: 5vw;
     --border-radius: 0.35rem;
-    --mobile-contact-buttons-height: 75px;
+    --mobile-contact-buttons-height: 12.5vh;
   }
 }

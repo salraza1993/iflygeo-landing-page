@@ -79,6 +79,9 @@
 .text--no-italic {
   font-style: normal !important;
 }
+.text-balance {
+  text-wrap: balance;
+}
 
 .fw-thin, .fw-ultra-light, .fw-light {
   b, strong {
@@ -90,7 +93,7 @@
 .fw-light { font-weight: 300; }
 .fw-regular, .fw-normal { font-weight: 400; }
 .fw-medium { font-weight: 500; }
-.fw-semiBold { font-weight: 600; }
+.fw-semiBold, .fw-semibold { font-weight: 600; }
 .fw-bold { font-weight: 700; }
 
 @media (width < 768px) {

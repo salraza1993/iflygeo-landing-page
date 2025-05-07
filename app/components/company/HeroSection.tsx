@@ -10,18 +10,21 @@ function HeroSection() {
         <div className="animated-border-box-glow"></div>
         <div className="animated-border-box"></div>
         <div className="hero-content">
-          <h2 className="heading gilroy_thin">
+          <h1 className="heading gilroy_ultra-light">
             Redefining <strong className='text-accent'>Air Travel</strong> <strong className="text-primary">Distribution</strong>
-          </h2>
+          </h1>
           <div className="team-avatars">
             <Image src={'/images/team-avatars.png'} alt={'Team Avatars'} fill />
           </div>
         </div>
+        <div className="direction-arrow">
+          <Image src="/images/direction-arrow-right.png" alt="Direction Arrow" fill />
+        </div>
       </div>
       <div className="sub-content">
-        <h5 className="fw-ultra-light fw-bold">
-          We simplify air distribution with flexible, scalable, and cost-effective solutions for airlines and travel sellers.
-        </h5>
+        <h4 className="fw-ultra-light fw-thin">
+          We simplify air distribution with <strong>flexible, scalable, and cost-effective</strong> solutions for airlines and travel sellers.
+        </h4>
       </div>
     </section>
   )
