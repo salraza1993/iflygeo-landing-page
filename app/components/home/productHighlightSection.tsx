@@ -51,4 +51,4 @@ function ProductHighlightSection() {
   )
 }
 
-export default ProductHighlightSection
+export default ProductHighlightSection;
