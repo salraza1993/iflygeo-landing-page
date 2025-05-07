@@ -34,9 +34,9 @@ export const metadata: Metadata = {
     canonical: '/',
     languages: {'en-US': '/en-US',},
   },
-  // openGraph: {
-  //   images: '/opengraph-image.jpg',
-  // },
+  openGraph: {
+    images: '/opengraph-image.jpg',
+  },
   formatDetection: {
     email: true,
     address: true,
