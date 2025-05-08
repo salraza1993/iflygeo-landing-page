@@ -6,7 +6,7 @@ export default function CareerPage() {
       <section className="first-section">
         <div className="first-section-wrapper">
           <h2 className="gilroy_light">
-            <strong>We're</strong> always looking for <strong>Talented People</strong>
+            <strong>We&#39;re</strong> always looking for <strong>Talented People</strong>
           </h2>
           <p>
             Don&#39;t see a suitable position that matches your expertise, but still interested?
