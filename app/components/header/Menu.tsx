@@ -16,11 +16,11 @@ function Menu() {
   const [showMenu, setShowMenu] = useState<boolean>(false);
   const [activeStripMarginX, setActiveStripMarginX] = useState(0);
   const [activeStripOpacity, setActiveStripOpacity] = useState(1);
-
   const menuList: MenuListType[] = useMemo(() => [
+    { label: 'Home', path: '/' },
     { label: 'Company', path: '/company' },
     { label: 'Career', path: '/career' },
-    { label: 'Contact', path: '/contact' }
+    // { label: 'Contact', path: '/contact' }
   ], []);
 
   const updateStripPosition = useCallback(() => {

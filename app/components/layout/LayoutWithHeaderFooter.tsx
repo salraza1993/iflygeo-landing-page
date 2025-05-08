@@ -1,4 +1,5 @@
 import Header from "../header/Header";
+import MobileContactButtons from "../MobileContactButtons";
 
 
 function LayoutWithHeaderFooter({ children }: Readonly<{ children: React.ReactNode; }>) {
@@ -6,6 +7,7 @@ function LayoutWithHeaderFooter({ children }: Readonly<{ children: React.ReactNo
     <>
       <Header />
       {children}
+      <MobileContactButtons />
     </>
   )
 }
