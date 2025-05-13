@@ -1,18 +1,24 @@
 import "@/app/assets/css/pages/career.css";
+import HeroSection from "../components/career/HeroSection";
+import CurrentOpening from "../components/career/CurrentOpening";
+import AirlineLogosSection from "../components/AirlineLogosSection";
+import AchievementsSections from "../components/AchievementsSections";
+import ProductFeatures from "../components/home/ProductFeatures";
+import FooterCTASection from "../components/FooterCTASection";
+import ExtraSection from "../components/career/ExtraSection";
+import CareerFormSection from "../components/career/CareerFormSection";
 
 export default function CareerPage() {
   return (
-    <main className="career-page">
-      <section className="first-section">
-        <div className="first-section-wrapper">
-          <h2 className="gilroy_light">
-            <strong>We&#39;re</strong> always looking for <strong>Talented People</strong>
-          </h2>
-          <p>
-            Don&#39;t see a suitable position that matches your expertise, but still interested?
-          </p>
-        </div>
-      </section>
-    </main>
+    <>
+      <HeroSection />
+      <CurrentOpening />
+      <ExtraSection />
+      <CareerFormSection />
+      <AirlineLogosSection isTitleRequired={false} />
+      <AchievementsSections />
+      <ProductFeatures />
+      <FooterCTASection />
+    </>
   );
 }

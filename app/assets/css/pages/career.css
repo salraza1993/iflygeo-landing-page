@@ -1,4 +1,321 @@
-/* CSS for the Career page */
-.container {
-  /* Add your styles here */
+.career-page {
+  position: relative;
+}
+
+.career-hero-section {
+  --content-max-width: calc(70rem + 5vw);
+  --direction-arrow: 80px;
+  --heading-font-size: clamp(2rem, 5vw, 4rem);
+  --block-padding-y: calc(1.5rem + 1.5vw);
+  --block-padding-x: calc(2rem + 1.5vw);
+  --banner-size: calc(300px + 5vw);
+  --avatar-width: calc(350px + 12vw);
+  position: relative;
+  width: 100%;
+  isolation: isolate;
+  margin-block-start: calc(0rem - var(--body-top-padding));
+  padding-block-start: calc(var(--body-top-padding) + 0.75rem);
+  padding-inline: 2vw;
+  padding-block-end: calc(3rem + 2vw);
+
+  @media (width < 768px) {
+    --direction-arrow: 60px;
+    padding-block-start: calc(var(--body-top-padding) + var(--mobile-aside-gutter) / 2);
+    padding-inline: var(--mobile-aside-gutter);
+    padding-block-end: calc(2rem + 0vw);
+  }
+
+  .hero-content-wrapper {
+    position: relative;
+    margin-inline: auto;
+    z-index: 1;
+    max-width: var(--content-max-width);
+    margin-inline: auto;
+    padding: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (width < 992px) {
+      /* --banner-height: calc(250px + 5vw); */
+    }
+
+    .animated-border-box,
+    .animated-border-box-glow {
+      position: absolute;
+      overflow: hidden;
+      z-index: 0;
+      inset: 0;
+    }
+
+    .animated-border-box-glow {
+      overflow: hidden;
+      filter: blur(10px);
+      opacity: 0.5;
+    }
+
+    .animated-border-box:before,
+    .animated-border-box-glow:before {
+      content: '';
+      z-index: -2;
+      text-align: center;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(0deg);
+      position: absolute;
+      width: 99999px;
+      height: 99999px;
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      background-image: conic-gradient(transparent, var(--accent), transparent 25%);
+      animation: rotate 10s linear infinite;
+    }
+
+    .animated-border-box:after {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      left: 1px;
+      top: 1px;
+      width: calc(100% - 2px);
+      height: calc(100% - 2px);
+    }
+    .pattern { height: 100%; }
+
+    .hero-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-inline: calc(var(--block-padding-x) / 1);
+      padding-block: calc(var(--block-padding-x) / 1.5);
+      position: relative;
+      color: var(--body-bg);
+      background-image: linear-gradient(35deg, #DC8D5E, #8282FF);
+      isolation: isolate;
+      width: 100%;
+
+      @media (width < 768px) {
+        flex-direction: column;
+        padding: 0;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        opacity: 0.08;
+        background: transparent url(/images/wave2.gif) no-repeat;
+        background-blend-mode: luminosity;
+        background-position: center bottom 90%;
+        z-index: -1;
+      }
+
+      .heading {
+        text-transform: uppercase;
+        text-wrap: pretty;
+        line-height: 1.1;
+        color: var(--light);
+        max-width: 50%;
+
+        @media (width < 768px) {
+          width: 100%;
+          text-wrap: balance;
+          max-width: max-content;
+          padding: var(--mobile-aside-gutter);
+          padding-block-end: 0;
+          text-align: center;
+        }
+      }
+
+      .team-avatars {
+        position: relative;
+        height: auto;
+        width: var(--banner-size);
+        overflow: clip;
+
+        img {
+          position: relative !important;
+          object-fit: contain;
+          object-position: bottom;
+          display: block;
+        }
+      }
+    }
+  }
+
+  .sub-content {
+    position: relative;
+    width: 100%;
+    max-width: var(--content-max-width);
+    margin-inline: auto;
+    margin-block-start: calc(1rem + 2vw);
+    text-wrap: balance;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .button { white-space: nowrap; }
+
+    @media (width < 768px) {
+      margin-block-start: calc(2rem + 10vw);
+    }
+  }
+}
+
+
+.current-opening-section {
+  position: relative;
+  width: 100%;
+  padding-inline: 5vw;
+  .content-opening-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: calc(var(--wrapper-width) - 10rem);
+    margin-inline: auto;
+    padding-block: calc(1rem + 2vw);
+    .heading {
+      position: relative;
+      text-align: center;
+    }
+
+    .current-opening-list {
+      --columns: 3;
+      position: relative;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(var(--columns), 1fr);
+      gap: calc(1rem + 1vw);
+      padding-block-start: calc(2rem + 1vw);
+      padding-block-end: calc(2rem + 2vw);
+
+      .job-card {
+        --strip-bg: var(--accent-hsl);
+        --square-pattern-height: 100%;
+        --square-pattern-opacity: 0.08;
+        --square-gradient-bg: linear-gradient(to top, hsla(var(--header-bg-hsl), 1) 0%, hsla(var(--header-bg-hsl), 0) 100%);
+        position: relative;
+        background-image: linear-gradient(to bottom, hsla(var(--header-bg-hsl), 0.1) 0%, hsla(var(--header-bg-hsl), 1) 100%);
+        padding: calc(1rem + 0.5vw);
+        border-radius: calc(var(--border-radius) * 1.75);
+        isolation: isolate;
+        overflow: clip;
+        
+        .card-banner {
+          position: relative;
+          width: 100%;
+          justify-content: center;
+          align-items: flex-start;
+          display: flex;
+          margin-block-end: calc(1rem + 0.6vw);
+          img { 
+            position: relative !important;
+            width: auto;
+            height: auto;
+            max-width: calc(185px + 5vw);
+            object-fit: contain;
+            object-position: top;
+          }
+        }
+        .card-content {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+          .list {
+            position: relative;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            gap: 0.5rem;
+            & .list-item {
+              display: flex;
+              gap: 0.75rem;
+              .label {
+                display: inline-block;
+                min-width: 90px;
+              }
+            }
+          }
+        }
+        .card-footer {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-block-start: calc(1rem + 1vw);
+        }
+      }
+    }
+  }
+}
+
+.extra-section {
+  position: relative;
+  width: 100%;
+  padding-inline: 5vw;
+
+  .extra-section-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: calc(var(--wrapper-width) - 20rem);
+    margin-inline: auto;
+    padding-block: calc(1rem + 2vw);
+    .content {
+      --image-size: calc(250px + 5vw);
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: calc(1rem + 2vw);
+
+      .image {
+        position: relative;
+        width: var(--image-size);
+        aspect-ratio: 1/1;
+        flex-shrink: 0;
+        img {
+          position: relative !important;
+          object-fit: contain;
+        }
+      }
+      .text {
+        display: grid;
+        gap: 1rem;
+        text-wrap: balance;
+      }
+    }
+  }
+}
+
+.career-from-section {
+  position: relative;
+  width: 100%;
+  padding-inline: 5vw;
+  padding-block-start: calc(1rem + 2vw);
+
+  .career-form-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: calc(var(--wrapper-width) - 10rem);
+    margin-inline: auto;
+    color: var(--light);
+    .content-wrapper {
+      position: relative;
+      border-radius: calc(var(--border-radius) * 2);
+      padding: calc(1.5rem + 1vw);
+      background-image: url(/images/abstract-patten.png), linear-gradient(-135deg, #DC8D5E,
+        #4949d5);
+      isolation: isolate;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .heading {
+        line-height: 1.1em;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+      }
+
+      .form-container {
+        max-width: 600px;
+      }
+    }
+  }
 }
