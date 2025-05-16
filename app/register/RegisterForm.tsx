@@ -50,6 +50,7 @@ function RegisterForm() {
       if (!response.ok) {
         setButtonText('Oops! Something went wrong. Try Again')
         setFormStates('failed')
+        
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       const finalData = await response.json();

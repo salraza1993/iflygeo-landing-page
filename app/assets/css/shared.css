@@ -837,14 +837,14 @@
       margin-block-start: calc(3rem + 4vw);
       margin-inline: auto;
       max-width: calc(var(--wrapper-width) - 12rem);
+      isolation: isolate;
 
       @media (width > 767px) {
-
         &:before,
         &::after {
           content: '';
           position: absolute;
-          z-index: 1;
+          z-index: -1;
           inset-inline-start: 20%;
         }
 
@@ -1039,6 +1039,8 @@
   --input-height: 52px;
   --input-padding-x: 1rem;
   --input-bg: var(--light);
+  --input-file-button-bg: var(--dark);
+  --input-file-button-color: var(--light);
   --input-border-color: var(--light);
   --input-color: var(--dark);
   --outline-color: var(--accent);
@@ -1109,6 +1111,8 @@
         --input-bg: #ffe9e9;
         --input-border-color: #c43131;
         --input-color: #be0909;
+        --input-file-button-bg: var(--input-color);
+        --input-file-button-color: var(--input-bg);
         --outline-color: var(--input-border-color);
         --icon-color: var(--input-color);
         --icon-scale: 1;
@@ -1119,6 +1123,8 @@
         --input-bg: #f5fff9;
         --input-border-color: var(--light);
         --input-color: #006d2d;
+        --input-file-button-bg: var(--input-color);
+        --input-file-button-color: var(--input-bg);
         --outline-color: var(--input-border-color);
         --icon-color: var(--input-color);
         --icon-scale: 1;
@@ -1162,6 +1168,27 @@
         &:-webkit-autofill {
           -webkit-box-shadow: 0 0 0 30px var(--input-bg) inset !important;
           -webkit-text-fill-color: var(--input-color) !important;
+        }
+        &[type="file"] {
+          padding: 0.25rem;
+          &::file-selector-button {
+            background-color: var(--input-file-button-bg);
+            font-weight: bold;
+            color: var(--input-file-button-color);
+            padding-inline: 1rem;
+            height: calc(var(--input-height) - (0.25rem * 2.5));
+            border: thin solid transparent;
+            border-radius: calc(var(--border-radius) / 1.5);
+            margin-inline-end: 0.75rem;
+            cursor: pointer;
+            transition: var(--transition);
+            &:hover {
+              background-color: var(--primary);
+            }
+            &::after {
+              content: 'adasdfasdf';
+            }
+          }
         }
       }
 

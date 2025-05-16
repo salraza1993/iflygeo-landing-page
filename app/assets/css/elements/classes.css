@@ -96,6 +96,13 @@
 .fw-semiBold, .fw-semibold { font-weight: 600; }
 .fw-bold { font-weight: 700; }
 
+.max-width--max-content { max-width: max-content !important; }
+.max-width--min-content { max-width: min-content !important; }
+.max-width--fit-content { max-width: fit-content !important; }
+.d-flex { display: flex !important; }
+.flex-column { flex-direction: column !important;}
+.gap-1 { gap: 0.35rem !important; }
+
 @media (width < 768px) {
   .hide-in-mobile {display: none !important; }
   .show-in-mobile {display: block !important; }

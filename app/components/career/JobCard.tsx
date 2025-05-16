@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 export type CardDataType = {
@@ -44,14 +45,14 @@ function JobCard({data}: Props) {
         </ul>
       </div>
       <div className="card-footer">
-        <button className='button button--primary' data-icon="end">
-          <span>Apply Now</span>
-          <span className="icon"><i className="fa-solid fa-arrow-right"></i></span>
-        </button>
         <button className='button button--transparent' data-icon="start">
           <span className="icon"><i className="fa-solid fa-circle-info"></i></span>
           <span>View Info</span>
         </button>
+        <Link href={'#careerForm'} className='button button--primary' data-icon="end">
+          <span>Apply Now</span>
+          <span className="icon"><i className="fa-solid fa-arrow-right"></i></span>
+        </Link>
       </div>
     </div>
   )

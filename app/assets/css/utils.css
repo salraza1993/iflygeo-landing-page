@@ -17,7 +17,7 @@ h4, .h4 {
 }
 
 h5, .h5 {
-  font-size: clamp(1.5rem, 3vw, calc(1.125rem * 1.75));
+  font-size: clamp(1.35rem, 2.65vw, calc(1.125rem * 1.8));
   line-height: 1.2;
 }
 

@@ -115,12 +115,13 @@ function CareerForm() {
         {errors.phoneNumber && <small className="error">{errors.phoneNumber.message}</small>}
       </div>
 
-      <div className={"input-group full-edge"}>
-        <label className="input-label">Attach Resume</label>
+      <div className={`${fieldStatusClass("resume", errors, touchedFields)} full-edge`}>
+        <label className="input-label" htmlFor="file">Attach Resume</label>
         <input
           type="file"
+          id="file"
           className="input-field"
-          accept=".pdf,.doc,.docx"
+          accept=".pdf"
           {...register("resume", {
             required: "Resume is required",
             validate: {

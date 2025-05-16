@@ -7,6 +7,7 @@ import ProductFeatures from "../components/home/ProductFeatures";
 import FooterCTASection from "../components/FooterCTASection";
 import ExtraSection from "../components/career/ExtraSection";
 import CareerFormSection from "../components/career/CareerFormSection";
+import JobDetailsOverlay from "../components/career/JobDetailsOverlay";
 
 export default function CareerPage() {
   return (
@@ -19,6 +20,7 @@ export default function CareerPage() {
       <AchievementsSections />
       <ProductFeatures />
       <FooterCTASection />
+      <JobDetailsOverlay />
     </>
   );
 }
