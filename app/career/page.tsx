@@ -7,20 +7,23 @@ import ProductFeatures from "../components/home/ProductFeatures";
 import FooterCTASection from "../components/FooterCTASection";
 import ExtraSection from "../components/career/ExtraSection";
 import CareerFormSection from "../components/career/CareerFormSection";
-import JobDetailsOverlay from "../components/career/JobDetailsOverlay";
+import { JobDetailsProvider } from "../context/JobDetailsContext";
+import JabCardDetails from "../components/career/JabCardDetails";
 
 export default function CareerPage() {
   return (
     <>
-      <HeroSection />
-      <CurrentOpening />
-      <ExtraSection />
-      <CareerFormSection />
-      <AirlineLogosSection isTitleRequired={false} />
-      <AchievementsSections />
-      <ProductFeatures />
-      <FooterCTASection />
-      <JobDetailsOverlay />
+      <JobDetailsProvider>
+        <HeroSection />
+        <CurrentOpening />
+        <ExtraSection />
+        <CareerFormSection />
+        <AirlineLogosSection isTitleRequired={false} />
+        <AchievementsSections />
+        <ProductFeatures />
+        <FooterCTASection />
+        <JabCardDetails />
+      </JobDetailsProvider>
     </>
   );
 }

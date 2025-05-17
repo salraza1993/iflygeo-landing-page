@@ -1,20 +1,16 @@
+import { useJobDetails } from '@/app/context/JobDetailsContext'
+import { JobCardDataTypes } from '@/app/Interfaces/JobDetailsTypes';
+
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
-export type CardDataType = {
-  title: string,
-  id: string,
-  imagePath: string,
-  experience: string
-  vacancy: number
-  location: string,
-  postedOn: string,
-}
+
 type Props = {
-  data: CardDataType;
+  data: JobCardDataTypes;
 };
-function JobCard({data}: Props) {
+function JobCard({ data }: Props) {
+  const { showJobDetailsById } = useJobDetails();
   return (
     <div className='job-card'>
       <span className="strip-start"></span>
@@ -45,7 +41,8 @@ function JobCard({data}: Props) {
         </ul>
       </div>
       <div className="card-footer">
-        <button className='button button--transparent' data-icon="start">
+        <button className='button button--transparent' data-icon="start"
+            onClick={() => showJobDetailsById(data.id)}>
           <span className="icon"><i className="fa-solid fa-circle-info"></i></span>
           <span>View Info</span>
         </button>

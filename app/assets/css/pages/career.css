@@ -375,6 +375,7 @@
       .form-container {
         max-width: calc(500px + 5vw);
         flex-shrink: 0;
+        margin-block-start: 0;
       }
       @media (width < 992px) {
         flex-direction: column;
@@ -402,16 +403,24 @@
 }
 
 .job-details-overlay {
+  --back-button-size: 65px;
+  --image-size: calc(200px + 5vw);
+  --wrapper-padding: calc(1rem + 1vw);
   position: fixed;
   inset: 0;
   background-color: hsla(var(--body-bg-hsl), 0.85);
   backdrop-filter: blur(0.4rem);
   z-index: calc(var(--max-z-index) + 1);
-  padding: 5vw;
+  padding: calc(1rem + 2vw);
   overflow-y: scroll;
+  @media (width < 768px) {
+    --back-button-size: 45px;
+    --image-size: calc(165px + 5vw);
+    --wrapper-padding: var(--mobile-aside-gutter);
+    padding: calc(var(--mobile-aside-gutter) / 2);
+  }
 
   .job-details-content-wrapper {
-    --wrapper-padding: calc(1rem + 1vw);
     position: relative;
     max-width: calc(700px + 10vw);
     background-color: hsla(var(--header-bg-hsl), 0.55);
@@ -424,7 +433,6 @@
     }
     .close-button {
       --outline-color: var(--accent);
-      --back-button-size: 65px;
       width: var(--back-button-size);
       height: var(--back-button-size);
       background-color: var(--accent);
@@ -445,9 +453,12 @@
       &:hover {
         background-color: var(--header-bg);
       }
+      @media (width < 768px) { 
+        padding-block-start: 0.5rem;
+        padding-inline-start: 1.15rem;
+      }
     }
     .job-details-header {
-      --image-size: calc(200px + 5vw);
       position: relative;
       padding: var(--wrapper-padding);
       background-color: hsla(var(--light-hsl), 0.15);
@@ -468,6 +479,13 @@
           object-fit: contain;
         }
       }
+      @media (width < 768px) {
+        gap: var(--mobile-aside-gutter);
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-direction: column;
+        .heading .title { max-width: fit-content;}
+      }
     }
     .small-strip {
       position: relative;
@@ -476,6 +494,7 @@
       padding-inline: calc(var(--wrapper-padding) / 1.5);
       padding-block: calc(var(--wrapper-padding) / 2);
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
     }
@@ -511,6 +530,9 @@
         inset-block-start: 50%;
         background-color: hsla(var(--light-hsl), 0.25);
         z-index: -1;
+      }
+      @media (width < 768px) {
+        flex-direction: column;
       }
     }
   }

@@ -59,6 +59,11 @@ body {
   @media (width < 768px) {
     padding-block-end: var(--mobile-contact-buttons-height);
   }
+  &:is(.no-scroll) {
+    overflow-x: hidden !important;
+    overflow-y: hidden !important;
+    max-height: 100vh;
+  }
 }
 
 

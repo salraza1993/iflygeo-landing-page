@@ -1,0 +1,29 @@
+[
+  {
+    "title": "Backend Developer",
+    "id": "backendDeveloper",
+    "imagePath": "/images/logo-backend.png",
+    "experience": "3 to 5 years",
+    "vacancy": 1,
+    "location": "Dubai",
+    "postedOn": "Thursday, 01 Jun, 2023"
+  },
+  {
+    "title": "Front-end Developer",
+    "id": "frontendDeveloper",
+    "imagePath": "/images/logo-designer.png",
+    "experience": "3 to 5 years",
+    "vacancy": 1,
+    "location": "Dubai",
+    "postedOn": "Thursday, 01 Jun, 2023"
+  },
+  {
+    "title": "SEO Specialist",
+    "id": "seoSpecialist",
+    "imagePath": "/images/logo-seo.png",
+    "experience": "3 to 5 years",
+    "vacancy": 1,
+    "location": "Dubai",
+    "postedOn": "Thursday, 01 Jun, 2023"
+  }
+]

@@ -1,26 +1,30 @@
+'use client'
+import { useJobDetails } from "@/app/context/JobDetailsContext";
 import Image from "next/image"
 import Link from "next/link"
 
 function JabCardDetails() {
+  const { jobDetailsData, isVisible, hideJobDetails } = useJobDetails();
+  if (!isVisible || !jobDetailsData) return null;
   return (
-    <section className="job-details-overlay">
-      <div className="job-details-content-wrapper">
-        <div className="close-button"><i className="fa-solid fa-xmark"></i></div>
+    <section className="job-details-overlay" onClick={hideJobDetails}>
+      <div className="job-details-content-wrapper" onClick={e => e.stopPropagation()}>
+        <div className="close-button" onClick={hideJobDetails}><i className="fa-solid fa-xmark"></i></div>
         <div className="job-details-header">
           <div className="logo">
-            <Image src={'/images/logo-backend.png'} alt={''} fill />
+            <Image src={jobDetailsData.imagePath} alt={jobDetailsData.title} fill />
           </div>
           <div className="heading">
-            <h3 className="gilroy_bold title">Backend Developer</h3>
+            <h3 className="gilroy_bold title">{jobDetailsData.title}</h3>
           </div>
         </div>
         <div className="small-strip">
           <h6 className="gilroy_bold title">Job Overview</h6>
-          <small className="fw-bold">Thursday, 01 Jun, 2023</small>
+          <small className="fw-bold">{jobDetailsData.postedOn}</small>
         </div>
         <div className="job-details-body">
-          <div className="content">
-            <div>
+          <div className="content" dangerouslySetInnerHTML={{__html: jobDetailsData.content}}>
+            {/* <div>
               <p>We are seeking a skilled and dedicated Back-end Developer to join our development team. As a Back-end Developer, you will be responsible for designing, developing, and maintaining server-side applications and databases. Your primary focus will be on ensuring the smooth operation and scalability of our web applications, APIs, and data management systems.</p>
               <p><strong>Responsibilities:</strong></p>
               <ul>
@@ -48,11 +52,13 @@ function JabCardDetails() {
                 <li>Bachelor&#39;s degree in Computer Science, Engineering, or a related field is preferred.</li>
               </ul>
               <p>Join our talented and dynamic development team and contribute to building robust and scalable back-end solutions that power our web applications. If you are passionate about back-end development, have a strong attention to detail, and thrive in a fast-paced environment, we would love to hear from you.</p>
-            </div>
+            </div> */}
           </div>
         </div>
         <div className="job-details-footer">
-          <Link href="/career#career-form" className="button button--accent button--lg shadow max-width--max-content" data-icon="end">
+          <Link href="/career#career-form" onClick={() => hideJobDetails()}
+            className="button button--accent button--lg shadow max-width--max-content"
+            data-icon="end">
             <span className="">Apply Now</span>
             <span className="icon"><i className="fa-solid fa-arrow-right"></i></span>
           </Link>
