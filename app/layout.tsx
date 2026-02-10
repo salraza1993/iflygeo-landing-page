@@ -16,6 +16,7 @@ import {
 import "@/app/assets/css/globals.css";
 import {  } from "next/navigation";
 import LayoutManager from "./components/layout/LayoutManager";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 const BASE_URL = 'https://iflygeo.com/';
 export const metadata: Metadata = {
@@ -75,6 +76,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="en" className={bodyFonts}>
       <body>
         <LayoutManager>{children}</LayoutManager>
+        <GoogleTagManager gtmId="GTM-W6VCBRHW" />
       </body>
     </html>
   );
